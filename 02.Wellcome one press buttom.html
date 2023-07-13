@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellcome on Press button</title>
+
+    <style>
+        button{
+            padding: 10px;
+            color: white;
+            background-color: purple;
+            font-size: 18px;
+            width: 100px;
+            margin: 20px auto;
+            cursor: pointer;
+        }
+        button:active{
+            color: black;
+            background-color: white;
+            border: 2px solid purple;
+        }
+
+        p{
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <button id="button" >Press</button>
+    <p id="showname"></p>
+
+    <script>
+
+        let button = document.getElementById("button");
+        let showname = document.getElementById("showname")
+        button.addEventListener("click", myfunction)
+        
+        function myfunction(){
+            const name = prompt("Enter Youer Name:", "Guest");
+            alert(`Hello ${name}, Wellocme on this page.`);
+            showname.textContent = `Hello ${name}, Wellocme on this page. `;
+            
+            
+            setTimeout(remove, 5000)
+        }
+        
+        function remove(){
+            showname.style.display= "none";
+        }
+    </script>
+</body>
+</html>
